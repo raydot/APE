@@ -1,0 +1,240 @@
+{
+  "traces": [
+    {
+      "timestamp": 1.9073486328125e-06,
+      "level": "info",
+      "agent_id": "system",
+      "event_type": "simulation_start",
+      "message": "Starting ball drop simulation with observability",
+      "data": {
+        "initial_height": 5.0,
+        "elasticity": 0.8
+      }
+    },
+    {
+      "timestamp": 0.0006759166717529297,
+      "level": "info",
+      "agent_id": "ball-001",
+      "event_type": "agent_created",
+      "message": "Ball agent initialized",
+      "data": {
+        "position": [
+          0.0,
+          5.0
+        ],
+        "mass": 1.0
+      }
+    },
+    {
+      "timestamp": 0.0009109973907470703,
+      "level": "info",
+      "agent_id": "floor-001",
+      "event_type": "agent_created",
+      "message": "Floor agent initialized",
+      "data": {
+        "position": [
+          0.0,
+          0.0
+        ]
+      }
+    },
+    {
+      "timestamp": 1.0050959587097168,
+      "level": "info",
+      "agent_id": "system",
+      "event_type": "llm_config",
+      "message": "Using OpenAI: gpt-4o-mini",
+      "data": {}
+    },
+    {
+      "timestamp": 1.005155086517334,
+      "level": "debug",
+      "agent_id": "ball-001",
+      "event_type": "physics_step",
+      "message": "Physics update at iteration 0",
+      "data": {
+        "position": [
+          0.0,
+          5.0
+        ],
+        "velocity": [
+          0.0,
+          0.0
+        ],
+        "time": 0.0
+      }
+    },
+    {
+      "timestamp": 1.005504846572876,
+      "level": "debug",
+      "agent_id": "ball-001",
+      "event_type": "physics_step",
+      "message": "Physics update at iteration 50",
+      "data": {
+        "position": [
+          0.0,
+          3.7505
+        ],
+        "velocity": [
+          0.0,
+          -4.899999999999997
+        ],
+        "time": 0.5000000000000002
+      }
+    },
+    {
+      "timestamp": 1.0057868957519531,
+      "level": "debug",
+      "agent_id": "ball-001",
+      "event_type": "physics_step",
+      "message": "Physics update at iteration 100",
+      "data": {
+        "position": [
+          0.0,
+          0.05100000000000188
+        ],
+        "velocity": [
+          0.0,
+          -9.800000000000006
+        ],
+        "time": 1.0000000000000007
+      }
+    },
+    {
+      "timestamp": 1.005842924118042,
+      "level": "info",
+      "agent_id": "ball-001",
+      "event_type": "collision_detected",
+      "message": "Collision #1 detected",
+      "data": {
+        "time": 1.0100000000000007,
+        "velocity_before": [
+          0.0,
+          -9.898000000000007
+        ]
+      }
+    },
+    {
+      "timestamp": 3.8736579418182373,
+      "level": "info",
+      "agent_id": "ball-001",
+      "event_type": "collision_resolved",
+      "message": "Collision #1 resolved",
+      "data": {
+        "velocity_after": [
+          0.0,
+          7.9184
+        ],
+        "llm_duration": 2.86777925491333
+      }
+    },
+    {
+      "timestamp": 3.8740129470825195,
+      "level": "debug",
+      "agent_id": "ball-001",
+      "event_type": "physics_step",
+      "message": "Physics update at iteration 150",
+      "data": {
+        "position": [
+          0.0,
+          2.679516000000002
+        ],
+        "velocity": [
+          0.0,
+          3.1164000000000067
+        ],
+        "time": 1.500000000000001
+      }
+    },
+    {
+      "timestamp": 3.8742997646331787,
+      "level": "debug",
+      "agent_id": "ball-001",
+      "event_type": "physics_step",
+      "message": "Physics update at iteration 200",
+      "data": {
+        "position": [
+          0.0,
+          2.9882160000000058
+        ],
+        "velocity": [
+          0.0,
+          -1.783599999999993
+        ],
+        "time": 2.0000000000000013
+      }
+    },
+    {
+      "timestamp": 3.874581813812256,
+      "level": "debug",
+      "agent_id": "ball-001",
+      "event_type": "physics_step",
+      "message": "Physics update at iteration 250",
+      "data": {
+        "position": [
+          0.0,
+          0.8469160000000104
+        ],
+        "velocity": [
+          0.0,
+          -6.683599999999987
+        ],
+        "time": 2.4999999999999907
+      }
+    },
+    {
+      "timestamp": 3.874706745147705,
+      "level": "info",
+      "agent_id": "ball-001",
+      "event_type": "collision_detected",
+      "message": "Collision #2 detected",
+      "data": {
+        "time": 2.619999999999988,
+        "velocity_before": [
+          0.0,
+          -7.859599999999985
+        ]
+      }
+    },
+    {
+      "timestamp": 6.550066947937012,
+      "level": "info",
+      "agent_id": "ball-001",
+      "event_type": "collision_resolved",
+      "message": "Collision #2 resolved",
+      "data": {
+        "velocity_after": [
+          0.0,
+          6.287679999999988
+        ],
+        "llm_duration": 2.67533802986145
+      }
+    }
+  ],
+  "llm_traces": [
+    {
+      "agent_id": "ball-001",
+      "timestamp": 3.873642921447754,
+      "model": "gpt-4o-mini",
+      "prompt": "Calculate collision for velocity [0.0, 7.9184]",
+      "response": "New velocity: [0.0, 7.9184]",
+      "reasoning": "Elastic collision calculation",
+      "duration": 2.86777925491333,
+      "tokens_used": 150,
+      "cost": 0.002
+    },
+    {
+      "agent_id": "ball-001",
+      "timestamp": 6.5500569343566895,
+      "model": "gpt-4o-mini",
+      "prompt": "Calculate collision for velocity [0.0, 6.287679999999988]",
+      "response": "New velocity: [0.0, 6.287679999999988]",
+      "reasoning": "Elastic collision calculation",
+      "duration": 2.67533802986145,
+      "tokens_used": 150,
+      "cost": 0.002
+    }
+  ],
+  "start_time": 1767309342.263595,
+  "duration": 6.550559997558594
+}
