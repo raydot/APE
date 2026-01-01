@@ -1,5 +1,6 @@
-# Special
+# MD files
 /docs
+TODO.md
 
 # Environment
 .env
@@ -17,6 +18,7 @@ ENV/
 .idea/
 *.swp
 *.swo
+*.code-workspace
 
 # OS
 .DS_Store
@@ -24,3 +26,4 @@ ENV/
 # Conda
 *.Conda
 conda-meta/
+
