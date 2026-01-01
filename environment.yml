@@ -1,0 +1,13 @@
+name: ape
+channels:
+  - defaults
+  - conda-forge
+packages:
+  - python=3.12
+  - numpy
+  - matplotlib
+  - pip
+  - pip:
+      - openai
+      - anthropic
+      - python-dotenv
