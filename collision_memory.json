@@ -1,0 +1,23 @@
+{
+  "memories": {
+    "03dafcc7090a4adb243a6be936b88dcc": {
+      "velocity_before": [
+        0.0,
+        -10.0
+      ],
+      "velocity_after": [
+        0.0,
+        8.0
+      ],
+      "surface_normal": [
+        0.0,
+        1.0
+      ],
+      "elasticity": 0.8,
+      "mass": 1.0,
+      "reasoning": "Elastic collision: perpendicular component reversed and scaled by 0.8, parallel component unchanged",
+      "hit_count": 1
+    }
+  },
+  "similarity_threshold": 0.1
+}
