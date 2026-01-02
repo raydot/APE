@@ -1,3 +1,18 @@
+[project]
+name = "ape"
+version = "0.4.0"
+description = "Agentic Physics Engine - LLM-powered physics simulation"
+requires-python = ">=3.12"
+dependencies = [
+    "numpy>=1.24.0,<2.0.0", 
+    "matplotlib>=3.7.0",
+    "openai>=1.0.0",
+    "anthropic>=0.18.0",
+    "python-dotenv>=1.0.0",
+    "qdrant-client>=1.7.0",
+    "sentence-transformers>=2.2.0",
+]
+
 [tool.commitizen]
 name = "cz_conventional_commits"
 version = "0.4.0"
