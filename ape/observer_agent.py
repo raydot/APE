@@ -328,12 +328,18 @@ COLLISION PARAMETERS:
         
         prompt += """
 
-TASK: Predict the velocities after this collision.
+PHYSICS PRINCIPLES:
+1. Momentum conservation: m1*v1_before + m2*v2_before = m1*v1_after + m2*v2_after
+2. Energy conservation (elastic): 0.5*m1*|v1|² + 0.5*m2*|v2|² = constant
+3. Decompose velocities into normal (along collision) and tangential (perpendicular)
+4. Normal components exchange based on masses, tangential components unchanged
 
-Consider:
-- Momentum conservation: total momentum before = total momentum after
-- Energy conservation (for elastic collisions)
-- Velocity components parallel and perpendicular to collision normal
+EXAMPLE CALCULATION (1D head-on):
+- Ball 1: m=1kg at v=2 m/s hits Ball 2: m=1kg at v=0 m/s
+- Equal masses → velocities swap → v1_after=0 m/s, v2_after=2 m/s
+- Check momentum: (1)(2) + (1)(0) = (1)(0) + (1)(2) = 2 kg⋅m/s ✓
+
+TASK: Predict the velocities after this collision.
 
 Respond with ONLY the predicted velocities in this format:
 v1_after: [x, y]
@@ -374,3 +380,135 @@ v2_after: [x, y]
         except Exception as e:
             print(f"[{self.agent_id}] Parse error: {e}")
             return np.array([0.0, 0.0]), np.array([0.0, 0.0])
+    
+    def discover_principles(self) -> Dict[str, Any]:
+        """
+        After observing many collisions, ask agent what physics principles it learned.
+        This tests meta-learning: can the agent articulate discovered patterns?
+        
+        Returns:
+            dict with raw response and parsed findings
+        """
+        
+        if len(self.observations) < 5:
+            return {
+                'raw_response': "Insufficient observations to discover principles (need at least 5)",
+                'mentions_momentum': False,
+                'mentions_energy': False,
+                'mentions_conservation': False,
+                'provides_formula': False,
+                'prediction_stats': {}
+            }
+        
+        # Sample diverse observations for analysis
+        sample_size = min(10, len(self.observations))
+        step = max(1, len(self.observations) // sample_size)
+        sampled_obs = [self.observations[i] for i in range(0, len(self.observations), step)][:sample_size]
+        
+        # Calculate prediction statistics
+        avg_error = np.mean(self.prediction_errors) if self.prediction_errors else 0
+        early_errors = self.prediction_errors[:len(self.prediction_errors)//3] if self.prediction_errors else []
+        late_errors = self.prediction_errors[-len(self.prediction_errors)//3:] if self.prediction_errors else []
+        early_avg = np.mean(early_errors) if early_errors else 0
+        late_avg = np.mean(late_errors) if late_errors else 0
+        
+        # Build prompt
+        prompt = f"""You have observed {len(self.observations)} collisions between balls.
+
+    YOUR PREDICTION PERFORMANCE:
+    - Total predictions made: {len(self.prediction_errors)}
+    - Average prediction error: {avg_error:.3f} m/s
+    - Early predictions (first third): {early_avg:.3f} m/s
+    - Recent predictions (last third): {late_avg:.3f} m/s
+    - Improvement: {early_avg - late_avg:.3f} m/s
+
+    Here are {len(sampled_obs)} representative examples:
+    """
+        
+        for i, obs in enumerate(sampled_obs, 1):
+            prompt += f"""
+    {i}. Collision:
+    Before: Ball 1 (m={obs['mass1']}kg) at v={obs['v1_before']} m/s
+            Ball 2 (m={obs['mass2']}kg) at v={obs['v2_before']} m/s
+    After:  Ball 1 at v={obs['v1_after']} m/s
+            Ball 2 at v={obs['v2_after']} m/s
+    Elasticity: {obs['elasticity']}
+    """
+        
+        prompt += """
+
+    Based on these observations, answer these questions:
+
+    1. What determines the final velocities after a collision?
+    2. Is there a relationship between mass and velocity change?
+    3. What quantities are conserved in collisions?
+    - Is momentum (mass × velocity) conserved? Verify with examples.
+    - Is kinetic energy (½m*v²) conserved? Verify with examples.
+    4. Can you state a general formula for predicting collision outcomes?
+    5. How do collision angle and initial velocities affect the result?
+
+    PHYSICS REFERENCE (for comparison):
+    Classical physics predicts:
+    - Momentum conservation: m1*v1_before + m2*v2_before = m1*v1_after + m2*v2_after
+    - Energy conservation (elastic): ½m1*v1²_before + ½m2*v2²_before = ½m1*v1²_after + ½m2*v2²_after
+
+    For each principle:
+    1. State it clearly
+    2. Show example calculation from data above
+    3. Explain when/why it applies
+
+    Did you discover these classical principles from observation alone?
+    Explain the physics principles you learned and how confident you are in them.
+    """
+        
+        try:
+            if hasattr(self.llm_client, 'chat'):  # OpenAI
+                response = self.llm_client.chat.completions.create(
+                    model=self.model_name,
+                    messages=[
+                        {"role": "system", "content": "You are a physics observer analyzing collision patterns to discover fundamental principles."},
+                        {"role": "user", "content": prompt}
+                    ],
+                    temperature=0.3,
+                    max_tokens=2000
+                )
+                principles = response.choices[0].message.content
+            else:  # Anthropic
+                response = self.llm_client.messages.create(
+                    model=self.model_name,
+                    max_tokens=2000,
+                    temperature=0.3,
+                    messages=[{"role": "user", "content": prompt}]
+                )
+                principles = response.content[0].text
+            
+            # Parse key findings
+            raw_lower = principles.lower()
+            
+            return {
+                'raw_response': principles,
+                'mentions_momentum': 'momentum' in raw_lower,
+                'mentions_energy': 'energy' in raw_lower or 'kinetic' in raw_lower,
+                'mentions_conservation': 'conserve' in raw_lower or 'constant' in raw_lower,
+                'provides_formula': ('m1*v1' in principles or 'mv' in principles or 
+                                'm₁v₁' in principles or 'Σmv' in principles),
+                'discovers_classical_physics': ('momentum' in raw_lower and 'conserve' in raw_lower),
+                'prediction_stats': {
+                    'total_observations': len(self.observations),
+                    'total_predictions': len(self.prediction_errors),
+                    'avg_error': avg_error,
+                    'early_error': early_avg,
+                    'late_error': late_avg,
+                    'improvement': early_avg - late_avg
+                }
+            }
+            
+        except Exception as e:
+            return {
+                'raw_response': f"Error discovering principles: {e}",
+                'mentions_momentum': False,
+                'mentions_energy': False,
+                'mentions_conservation': False,
+                'provides_formula': False,
+                'prediction_stats': {}
+            }

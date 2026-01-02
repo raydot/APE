@@ -27,3 +27,11 @@ ENV/
 *.Conda
 conda-meta/
 
+# Output files
+output/
+*.png
+*.json
+mlflow.db
+mlruns/
+qdrant_storage/
+

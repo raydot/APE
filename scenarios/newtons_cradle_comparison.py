@@ -2,6 +2,7 @@ import numpy as np
 import os
 import sys
 from pathlib import Path
+from datetime import datetime
 from dotenv import load_dotenv
 os.environ['TOKENIZERS_PARALLELISM'] = 'false'
 
@@ -245,10 +246,28 @@ def run_comparison_experiment(
     
     ax4.grid(True, alpha=0.3, axis='y')
     
+    # Add statistical significance annotation
+    significance_text = f"Statistical Test: p={p_value_accept:.4f}"
+    if p_value_accept < 0.05:
+        significance_text += f" (SIGNIFICANT ✓)"
+        sig_color = 'green'
+    else:
+        significance_text += f" (NOT SIGNIFICANT)"
+        sig_color = 'red'
+    
+    ax4.text(0.5, 0.02, significance_text, 
+            transform=ax4.transAxes,
+            ha='center', va='bottom',
+            fontsize=10, fontweight='bold',
+            bbox=dict(boxstyle='round', facecolor=sig_color, alpha=0.2))
+    
     plt.tight_layout()
     
     # Save figure
-    filename = f'newtons_cradle_comparison_{num_balls}balls_{num_trials}trials.png'
+    output_dir = Path('output')
+    output_dir.mkdir(exist_ok=True)
+    timestamp = datetime.now().strftime('%Y%m%d_%H%M%S')
+    filename = output_dir / f'{timestamp}_newtons_cradle_comparison_{num_balls}balls_{num_trials}trials.png'
     plt.savefig(filename, dpi=150, bbox_inches='tight')
     print(f"[VISUALIZATION] Saved comparison plot to {filename}")
     

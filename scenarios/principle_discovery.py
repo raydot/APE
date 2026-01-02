@@ -63,7 +63,7 @@ def calculate_elastic_collision_2d(
 
 
 def run_principle_discovery(
-    num_balls=3,
+    num_balls=8,  # Increased from 3 to generate more collisions
     table_size=5.0,
     max_velocity=2.0,
     elasticity=0.95,
@@ -71,7 +71,9 @@ def run_principle_discovery(
     trial_num=1,
     num_collisions=20,
     use_mlflow=True,
-    seed=None
+    seed=None,
+    experience_store=None,
+    feedback_generator=None
 ):
     """
     Principle Discovery experiment: Observer learns physics by watching collisions.
@@ -147,12 +149,17 @@ def run_principle_discovery(
     if tracker:
         tracker.log_params({'model': model})
     
-    # Initialize observer's learning system
-    experience_store = None
-    feedback_gen = None
+    # Initialize observer's learning system (or use provided instances)
     if learning_enabled:
-        experience_store = ExperienceStore()
-        feedback_gen = FeedbackGenerator()
+        if experience_store is None:
+            experience_store = ExperienceStore()
+        if feedback_generator is None:
+            feedback_gen = FeedbackGenerator()
+        else:
+            feedback_gen = feedback_generator
+    else:
+        experience_store = None
+        feedback_gen = None
     
     # Create observer agent
     observer = ObserverAgent(
@@ -360,7 +367,8 @@ def run_principle_discovery(
         'recent_error': stats['recent_error'],
         'improvement': stats['improvement'],
         'improvement_percent': stats['improvement_percent'],
-        'prediction_errors': prediction_errors
+        'prediction_errors': prediction_errors,
+        'observer': observer  # Return observer for principle discovery
     }
     
     # Log final metrics to MLflow
@@ -391,7 +399,7 @@ def main():
     print("="*60 + "\n")
     
     # Configuration
-    num_balls = 3
+    num_balls = 8  # Increased from 3 to generate 20+ collisions
     table_size = 5.0
     max_velocity = 2.0
     elasticity = 0.95
@@ -417,6 +425,32 @@ def main():
         use_mlflow=True,
         seed=42
     )
+    
+    # Ask observer what principles it discovered
+    print(f"\n{'='*60}")
+    print("PRINCIPLE DISCOVERY: Asking observer what it learned...")
+    print(f"{'='*60}\n")
+    
+    # Print learning statistics
+    print("Learning Statistics:")
+    print(f"  Total observations: {results['total_observations']}")
+    print(f"  Average error: {results['avg_error']:.3f} m/s")
+    print(f"  Early error: {results['early_error']:.3f} m/s")
+    print(f"  Recent error: {results['recent_error']:.3f} m/s")
+    print(f"  Improvement: {results['improvement']:.3f} m/s ({results['improvement_percent']:.1f}%)")
+    
+    # Ask observer to articulate discovered principles
+    if results['total_observations'] >= 5:
+        print(f"\n{'='*60}")
+        print("DISCOVERED PRINCIPLES")
+        print(f"{'='*60}\n")
+        
+        observer = results['observer']
+        principles = observer.discover_principles()
+        print(principles)
+    else:
+        print(f"\nInsufficient observations ({results['total_observations']}) to discover principles.")
+        print("Need at least 5 observations for principle discovery.")
     
     print(f"\n{'='*60}")
     print("EXPERIMENT COMPLETE")
