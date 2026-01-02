@@ -20,7 +20,7 @@ class ExperimentTracker:
     def __init__(
         self,
         experiment_name: str = "APE-Learning",
-        tracking_uri: str = "./mlruns"
+        tracking_uri: str = "sqlite:///mlflow.db"
     ):
         """
         Initialize MLflow experiment tracker

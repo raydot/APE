@@ -1,0 +1,14 @@
+artifact_uri: /Users/davekanter/Documents/Dave/APE/mlruns/366031042701925049/05b19f58125c4cc6b317bf383c5aa07a/artifacts
+end_time: 1767326960513
+entry_point_name: ''
+experiment_id: '366031042701925049'
+lifecycle_stage: active
+run_id: 05b19f58125c4cc6b317bf383c5aa07a
+run_name: trial_1_learning
+source_name: ''
+source_type: 4
+source_version: ''
+start_time: 1767326956238
+status: 3
+tags: []
+user_id: davekanter
