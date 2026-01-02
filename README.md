@@ -4,14 +4,16 @@ An experimental physics engine where physical objects are autonomous agents that
 
 ## Overview
 
-APE explores a novel approach to physics simulation: instead of hardcoded equations, physical objects use large language models to reason about and negotiate their interactions. A ball doesn't follow `v = v0 + at`—it _thinks_ about what should happen when it hits the floor.
+APE explores a novel approach to physics simulation: physical objects are autonomous agents that use LLMs to reason about collisions and propose outcomes. When two balls collide, each agent predicts its post-collision velocity. A resolver validates these proposals against conservation laws—if valid, they're accepted; if not, ground truth physics is imposed.
+
+**Key insight**: Agents can be wrong and learn from corrections. The system tracks whether agents improve over time by comparing early vs. late trial performance.
 
 This is primarily an **agent infrastructure project** using physics as a concrete test domain. Physics provides:
 
 - Objective success criteria (conservation laws)
 - Visual debugging (you can see when it's wrong)
-- Multi-agent coordination challenges
-- Both fast reflexes (collision detection) and slow reasoning (outcome negotiation)
+- Multi-agent coordination challenges (proposal/validation cycles)
+- Learning feedback (ground truth available when agents fail)
 
 ## Architecture
 
@@ -41,6 +43,31 @@ python scenarios/ball_drop.py
 # Run with visualization
 python scenarios/visualize.py
 ```
+
+## Running Experiments
+
+APE includes emergence experiments that test multi-agent physics discovery. Start with **Newton's Cradle**:
+
+```bash
+# Single trial with 5 balls (includes visualization)
+python scenarios/newtons_cradle.py
+
+# Compare learning vs no-learning (20 trials each)
+python scenarios/newtons_cradle_comparison.py
+
+# Custom configuration
+python scenarios/newtons_cradle_comparison.py --balls 3 --trials 50
+```
+
+**What it tests**: Momentum transfer through chain collisions. Agents predict collision outcomes, a resolver validates against conservation laws, and the learning system tracks whether agents improve over time.
+
+**View tracked results**:
+
+```bash
+mlflow ui --backend-store-uri ./mlruns
+```
+
+Open http://localhost:5000 to explore metrics, compare runs, and visualize learning curves.
 
 ## Project Structure
 

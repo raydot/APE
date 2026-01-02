@@ -1,0 +1,898 @@
+{
+  "frames": [
+    {
+      "time": 0.01,
+      "balls": {
+        "ball-000": {
+          "position": [
+            0.02,
+            1.0
+          ],
+          "velocity": [
+            2.0,
+            0.0
+          ],
+          "mass": 1.0
+        },
+        "ball-001": {
+          "position": [
+            0.3,
+            1.0
+          ],
+          "velocity": [
+            0.0,
+            0.0
+          ],
+          "mass": 1.0
+        },
+        "ball-002": {
+          "position": [
+            0.6,
+            1.0
+          ],
+          "velocity": [
+            0.0,
+            0.0
+          ],
+          "mass": 1.0
+        },
+        "ball-003": {
+          "position": [
+            0.8999999999999999,
+            1.0
+          ],
+          "velocity": [
+            0.0,
+            0.0
+          ],
+          "mass": 1.0
+        },
+        "ball-004": {
+          "position": [
+            1.2,
+            1.0
+          ],
+          "velocity": [
+            0.0,
+            0.0
+          ],
+          "mass": 1.0
+        }
+      }
+    },
+    {
+      "time": 0.02,
+      "balls": {
+        "ball-000": {
+          "position": [
+            0.009999999999999992,
+            1.0
+          ],
+          "velocity": [
+            0.0,
+            0.0
+          ],
+          "mass": 1.0
+        },
+        "ball-001": {
+          "position": [
+            0.33,
+            1.0
+          ],
+          "velocity": [
+            2.0,
+            0.0
+          ],
+          "mass": 1.0
+        },
+        "ball-002": {
+          "position": [
+            0.6,
+            1.0
+          ],
+          "velocity": [
+            0.0,
+            0.0
+          ],
+          "mass": 1.0
+        },
+        "ball-003": {
+          "position": [
+            0.8999999999999999,
+            1.0
+          ],
+          "velocity": [
+            0.0,
+            0.0
+          ],
+          "mass": 1.0
+        },
+        "ball-004": {
+          "position": [
+            1.2,
+            1.0
+          ],
+          "velocity": [
+            0.0,
+            0.0
+          ],
+          "mass": 1.0
+        }
+      }
+    },
+    {
+      "time": 0.03,
+      "balls": {
+        "ball-000": {
+          "position": [
+            0.009999999999999992,
+            1.0
+          ],
+          "velocity": [
+            0.0,
+            0.0
+          ],
+          "mass": 1.0
+        },
+        "ball-001": {
+          "position": [
+            0.315,
+            1.0
+          ],
+          "velocity": [
+            0.0,
+            0.0
+          ],
+          "mass": 1.0
+        },
+        "ball-002": {
+          "position": [
+            0.635,
+            1.0
+          ],
+          "velocity": [
+            2.0,
+            0.0
+          ],
+          "mass": 1.0
+        },
+        "ball-003": {
+          "position": [
+            0.8999999999999999,
+            1.0
+          ],
+          "velocity": [
+            0.0,
+            0.0
+          ],
+          "mass": 1.0
+        },
+        "ball-004": {
+          "position": [
+            1.2,
+            1.0
+          ],
+          "velocity": [
+            0.0,
+            0.0
+          ],
+          "mass": 1.0
+        }
+      }
+    },
+    {
+      "time": 0.04,
+      "balls": {
+        "ball-000": {
+          "position": [
+            0.009999999999999992,
+            1.0
+          ],
+          "velocity": [
+            0.0,
+            0.0
+          ],
+          "mass": 1.0
+        },
+        "ball-001": {
+          "position": [
+            0.315,
+            1.0
+          ],
+          "velocity": [
+            0.0,
+            0.0
+          ],
+          "mass": 1.0
+        },
+        "ball-002": {
+          "position": [
+            0.655,
+            1.0
+          ],
+          "velocity": [
+            2.0,
+            0.0
+          ],
+          "mass": 1.0
+        },
+        "ball-003": {
+          "position": [
+            0.8999999999999999,
+            1.0
+          ],
+          "velocity": [
+            0.0,
+            0.0
+          ],
+          "mass": 1.0
+        },
+        "ball-004": {
+          "position": [
+            1.2,
+            1.0
+          ],
+          "velocity": [
+            0.0,
+            0.0
+          ],
+          "mass": 1.0
+        }
+      }
+    },
+    {
+      "time": 0.05,
+      "balls": {
+        "ball-000": {
+          "position": [
+            0.009999999999999992,
+            1.0
+          ],
+          "velocity": [
+            0.0,
+            0.0
+          ],
+          "mass": 1.0
+        },
+        "ball-001": {
+          "position": [
+            0.315,
+            1.0
+          ],
+          "velocity": [
+            0.0,
+            0.0
+          ],
+          "mass": 1.0
+        },
+        "ball-002": {
+          "position": [
+            0.675,
+            1.0
+          ],
+          "velocity": [
+            2.0,
+            0.0
+          ],
+          "mass": 1.0
+        },
+        "ball-003": {
+          "position": [
+            0.8999999999999999,
+            1.0
+          ],
+          "velocity": [
+            0.0,
+            0.0
+          ],
+          "mass": 1.0
+        },
+        "ball-004": {
+          "position": [
+            1.2,
+            1.0
+          ],
+          "velocity": [
+            0.0,
+            0.0
+          ],
+          "mass": 1.0
+        }
+      }
+    },
+    {
+      "time": 0.060000000000000005,
+      "balls": {
+        "ball-000": {
+          "position": [
+            0.009999999999999992,
+            1.0
+          ],
+          "velocity": [
+            0.0,
+            0.0
+          ],
+          "mass": 1.0
+        },
+        "ball-001": {
+          "position": [
+            0.315,
+            1.0
+          ],
+          "velocity": [
+            0.0,
+            0.0
+          ],
+          "mass": 1.0
+        },
+        "ball-002": {
+          "position": [
+            0.6950000000000001,
+            1.0
+          ],
+          "velocity": [
+            2.0,
+            0.0
+          ],
+          "mass": 1.0
+        },
+        "ball-003": {
+          "position": [
+            0.8999999999999999,
+            1.0
+          ],
+          "velocity": [
+            0.0,
+            0.0
+          ],
+          "mass": 1.0
+        },
+        "ball-004": {
+          "position": [
+            1.2,
+            1.0
+          ],
+          "velocity": [
+            0.0,
+            0.0
+          ],
+          "mass": 1.0
+        }
+      }
+    },
+    {
+      "time": 0.07,
+      "balls": {
+        "ball-000": {
+          "position": [
+            0.009999999999999992,
+            1.0
+          ],
+          "velocity": [
+            0.0,
+            0.0
+          ],
+          "mass": 1.0
+        },
+        "ball-001": {
+          "position": [
+            0.315,
+            1.0
+          ],
+          "velocity": [
+            0.0,
+            0.0
+          ],
+          "mass": 1.0
+        },
+        "ball-002": {
+          "position": [
+            0.7150000000000001,
+            1.0
+          ],
+          "velocity": [
+            2.0,
+            0.0
+          ],
+          "mass": 1.0
+        },
+        "ball-003": {
+          "position": [
+            0.8999999999999999,
+            1.0
+          ],
+          "velocity": [
+            0.0,
+            0.0
+          ],
+          "mass": 1.0
+        },
+        "ball-004": {
+          "position": [
+            1.2,
+            1.0
+          ],
+          "velocity": [
+            0.0,
+            0.0
+          ],
+          "mass": 1.0
+        }
+      }
+    },
+    {
+      "time": 0.08,
+      "balls": {
+        "ball-000": {
+          "position": [
+            0.009999999999999992,
+            1.0
+          ],
+          "velocity": [
+            0.0,
+            0.0
+          ],
+          "mass": 1.0
+        },
+        "ball-001": {
+          "position": [
+            0.315,
+            1.0
+          ],
+          "velocity": [
+            0.0,
+            0.0
+          ],
+          "mass": 1.0
+        },
+        "ball-002": {
+          "position": [
+            0.7350000000000001,
+            1.0
+          ],
+          "velocity": [
+            2.0,
+            0.0
+          ],
+          "mass": 1.0
+        },
+        "ball-003": {
+          "position": [
+            0.8999999999999999,
+            1.0
+          ],
+          "velocity": [
+            0.0,
+            0.0
+          ],
+          "mass": 1.0
+        },
+        "ball-004": {
+          "position": [
+            1.2,
+            1.0
+          ],
+          "velocity": [
+            0.0,
+            0.0
+          ],
+          "mass": 1.0
+        }
+      }
+    },
+    {
+      "time": 0.09,
+      "balls": {
+        "ball-000": {
+          "position": [
+            0.009999999999999992,
+            1.0
+          ],
+          "velocity": [
+            0.0,
+            0.0
+          ],
+          "mass": 1.0
+        },
+        "ball-001": {
+          "position": [
+            0.315,
+            1.0
+          ],
+          "velocity": [
+            0.0,
+            0.0
+          ],
+          "mass": 1.0
+        },
+        "ball-002": {
+          "position": [
+            0.7550000000000001,
+            1.0
+          ],
+          "velocity": [
+            2.0,
+            0.0
+          ],
+          "mass": 1.0
+        },
+        "ball-003": {
+          "position": [
+            0.8999999999999999,
+            1.0
+          ],
+          "velocity": [
+            0.0,
+            0.0
+          ],
+          "mass": 1.0
+        },
+        "ball-004": {
+          "position": [
+            1.2,
+            1.0
+          ],
+          "velocity": [
+            0.0,
+            0.0
+          ],
+          "mass": 1.0
+        }
+      }
+    },
+    {
+      "time": 0.09999999999999999,
+      "balls": {
+        "ball-000": {
+          "position": [
+            0.009999999999999992,
+            1.0
+          ],
+          "velocity": [
+            0.0,
+            0.0
+          ],
+          "mass": 1.0
+        },
+        "ball-001": {
+          "position": [
+            0.315,
+            1.0
+          ],
+          "velocity": [
+            0.0,
+            0.0
+          ],
+          "mass": 1.0
+        },
+        "ball-002": {
+          "position": [
+            0.7750000000000001,
+            1.0
+          ],
+          "velocity": [
+            2.0,
+            0.0
+          ],
+          "mass": 1.0
+        },
+        "ball-003": {
+          "position": [
+            0.8999999999999999,
+            1.0
+          ],
+          "velocity": [
+            0.0,
+            0.0
+          ],
+          "mass": 1.0
+        },
+        "ball-004": {
+          "position": [
+            1.2,
+            1.0
+          ],
+          "velocity": [
+            0.0,
+            0.0
+          ],
+          "mass": 1.0
+        }
+      }
+    },
+    {
+      "time": 0.10999999999999999,
+      "balls": {
+        "ball-000": {
+          "position": [
+            0.009999999999999992,
+            1.0
+          ],
+          "velocity": [
+            0.0,
+            0.0
+          ],
+          "mass": 1.0
+        },
+        "ball-001": {
+          "position": [
+            0.315,
+            1.0
+          ],
+          "velocity": [
+            0.0,
+            0.0
+          ],
+          "mass": 1.0
+        },
+        "ball-002": {
+          "position": [
+            0.7950000000000002,
+            1.0
+          ],
+          "velocity": [
+            2.0,
+            0.0
+          ],
+          "mass": 1.0
+        },
+        "ball-003": {
+          "position": [
+            0.8999999999999999,
+            1.0
+          ],
+          "velocity": [
+            0.0,
+            0.0
+          ],
+          "mass": 1.0
+        },
+        "ball-004": {
+          "position": [
+            1.2,
+            1.0
+          ],
+          "velocity": [
+            0.0,
+            0.0
+          ],
+          "mass": 1.0
+        }
+      }
+    },
+    {
+      "time": 0.11999999999999998,
+      "balls": {
+        "ball-000": {
+          "position": [
+            0.009999999999999992,
+            1.0
+          ],
+          "velocity": [
+            0.0,
+            0.0
+          ],
+          "mass": 1.0
+        },
+        "ball-001": {
+          "position": [
+            0.315,
+            1.0
+          ],
+          "velocity": [
+            0.0,
+            0.0
+          ],
+          "mass": 1.0
+        },
+        "ball-002": {
+          "position": [
+            0.8150000000000002,
+            1.0
+          ],
+          "velocity": [
+            2.0,
+            0.0
+          ],
+          "mass": 1.0
+        },
+        "ball-003": {
+          "position": [
+            0.8999999999999999,
+            1.0
+          ],
+          "velocity": [
+            0.0,
+            0.0
+          ],
+          "mass": 1.0
+        },
+        "ball-004": {
+          "position": [
+            1.2,
+            1.0
+          ],
+          "velocity": [
+            0.0,
+            0.0
+          ],
+          "mass": 1.0
+        }
+      }
+    },
+    {
+      "time": 0.12999999999999998,
+      "balls": {
+        "ball-000": {
+          "position": [
+            0.009999999999999992,
+            1.0
+          ],
+          "velocity": [
+            0.0,
+            0.0
+          ],
+          "mass": 1.0
+        },
+        "ball-001": {
+          "position": [
+            0.315,
+            1.0
+          ],
+          "velocity": [
+            0.0,
+            0.0
+          ],
+          "mass": 1.0
+        },
+        "ball-002": {
+          "position": [
+            0.7075,
+            1.0
+          ],
+          "velocity": [
+            0.0,
+            0.0
+          ],
+          "mass": 1.0
+        },
+        "ball-003": {
+          "position": [
+            1.0275,
+            1.0
+          ],
+          "velocity": [
+            2.0,
+            0.0
+          ],
+          "mass": 1.0
+        },
+        "ball-004": {
+          "position": [
+            1.2,
+            1.0
+          ],
+          "velocity": [
+            0.0,
+            0.0
+          ],
+          "mass": 1.0
+        }
+      }
+    }
+  ],
+  "collision_events": [
+    {
+      "time": 0.01,
+      "ball1": "ball-000",
+      "ball2": "ball-001",
+      "point": [
+        0.15999999999999998,
+        1.0
+      ]
+    },
+    {
+      "time": 0.01,
+      "ball1": "ball-002",
+      "ball2": "ball-003",
+      "point": [
+        0.75,
+        1.0
+      ]
+    },
+    {
+      "time": 0.02,
+      "ball1": "ball-001",
+      "ball2": "ball-002",
+      "point": [
+        0.46499999999999997,
+        1.0
+      ]
+    },
+    {
+      "time": 0.11999999999999998,
+      "ball1": "ball-002",
+      "ball2": "ball-003",
+      "point": [
+        0.8575,
+        1.0
+      ]
+    },
+    {
+      "time": 0.12999999999999998,
+      "ball1": "ball-003",
+      "ball2": "ball-004",
+      "point": [
+        1.11375,
+        1.0
+      ]
+    }
+  ],
+  "negotiation_outcomes": [
+    {
+      "time": 0.01,
+      "source": "ground_truth",
+      "valid": false,
+      "agreement_score": {
+        "agent1_error": 0.0,
+        "agent2_error": 0.5,
+        "agent1_rel_error": 0.0,
+        "agent2_rel_error": 0.2499998750000625,
+        "avg_rel_error": 0.12499993750003124,
+        "both_accurate": 0.0
+      }
+    },
+    {
+      "time": 0.01,
+      "source": "agent_negotiation",
+      "valid": true,
+      "agreement_score": {
+        "agent1_error": 0.0,
+        "agent2_error": 0.0,
+        "agent1_rel_error": 0.0,
+        "agent2_rel_error": 0.0,
+        "avg_rel_error": 0.0,
+        "both_accurate": 1.0
+      }
+    },
+    {
+      "time": 0.02,
+      "source": "agent_negotiation",
+      "valid": true,
+      "agreement_score": {
+        "agent1_error": 0.0,
+        "agent2_error": 0.0,
+        "agent1_rel_error": 0.0,
+        "agent2_rel_error": 0.0,
+        "avg_rel_error": 0.0,
+        "both_accurate": 1.0
+      }
+    },
+    {
+      "time": 0.11999999999999998,
+      "source": "ground_truth",
+      "valid": false,
+      "agreement_score": {
+        "agent1_error": 0.0,
+        "agent2_error": 1.0,
+        "agent1_rel_error": 0.0,
+        "agent2_rel_error": 0.499999750000125,
+        "avg_rel_error": 0.2499998750000625,
+        "both_accurate": 0.0
+      }
+    },
+    {
+      "time": 0.12999999999999998,
+      "source": "agent_negotiation",
+      "valid": true,
+      "agreement_score": {
+        "agent1_error": 0.0,
+        "agent2_error": 0.0,
+        "agent1_rel_error": 0.0,
+        "agent2_rel_error": 0.0,
+        "avg_rel_error": 0.0,
+        "both_accurate": 1.0
+      }
+    }
+  ]
+}

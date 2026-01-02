@@ -1,0 +1,14 @@
+artifact_uri: /Users/davekanter/Documents/Dave/APE/mlruns/936672203140067442/a7d7e0bb00f744248b42f46cf74bb2ae/artifacts
+end_time: 1767319820174
+entry_point_name: ''
+experiment_id: '936672203140067442'
+lifecycle_stage: active
+run_id: a7d7e0bb00f744248b42f46cf74bb2ae
+run_name: 5balls_trial17
+source_name: ''
+source_type: 4
+source_version: ''
+start_time: 1767319756495
+status: 3
+tags: []
+user_id: davekanter
